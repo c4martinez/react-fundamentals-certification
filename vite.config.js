@@ -36,7 +36,6 @@ export default defineConfig({
     // habilitar un partner del modo debug para habilitar mas reconmendaciones
     devCode: true,
 
-    // habilitar un modo de debug para las ejecuciones de la generacion del build
     debug: true,
   },
 });
