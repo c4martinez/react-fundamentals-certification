@@ -1,25 +1,30 @@
 import { useState, useEffect } from 'react';
+import { AppRouter } from '../AppRouter';
 import { pokemonApi } from './api/poke_api';
-import './style.module.css';
+import { PokemonProvider } from './contex/PokemonProvider';
 
-function App() {
-  const [pokemon, setPokemon] = useState([])
+// function App() {
+//   const [pokemon, setPokemon] = useState([])
 
-  async function loadPokemon(){
-    const popularPokemonList = await pokemonApi.loadPokemon();
-    setPokemon(popularPokemonList,[]);
-  }
+//   async function loadPokemon(){
+//     const popularPokemonList = await pokemonApi.loadPokemon();
+//     setPokemon(popularPokemonList,[]);
+//   }
 
-  useEffect(() => {
-    loadPokemon();
-  }, []);
+//   useEffect(() => {
+//     loadPokemon();
+//   }, []);
 
   
 
+//   return <AppRouter />
+// }
+
+function App() {
   return (
-    <div>
-      
-    </div>
+    <PokemonProvider>
+      <AppRouter />
+    </PokemonProvider>
   );
 }
 
