@@ -15,7 +15,7 @@ export const PokemonProvider = ({ children }) => {
 
   //estados simples
   const [loading, setloading] = useState(true);
-  const [active, setactive] = useState(false);
+  const [active, setActive] = useState(false);
 
   // Llamar 50 pokemones a la API
   const getPokemons = async (limit = 50) => {
@@ -67,6 +67,54 @@ export const PokemonProvider = ({ children }) => {
     getAllPokemons();
   }, []);
 
+  // BTN cargar más
+  const onClickLoadMore = () => {
+    setOffset(offset + 50);
+  };
+
+  // filter function + state
+  const [typeSelected, setTypeSelected] = useState({
+    grass: false,
+    normal: false,
+    fighting: false,
+    flying: false,
+    poison: false,
+    ground: false,
+    rock: false,
+    bug: false,
+    ghost: false,
+    steel: false,
+    fire: false,
+    water: false,
+    electric: false,
+    psychic: false,
+    ice: false,
+    dragon: false,
+    dark: false,
+    fairy: false,
+    unknow: false,
+    shadow: false,
+  });
+  const [filteredPokemons, setfilteredPokemons] = useState([]);
+  const handleCheckbox = (e) => {
+    setTypeSelected({
+      ...typeSelected,
+      [e.target.name]: e.target.checked,
+    });
+
+    if (e.target.checked) {
+      const filteredResults = allPokemons.filter((pokemon) =>
+        pokemon.types.map((type) => type.type.name).includes(e.target.name)
+      );
+      setfilteredPokemons([...filteredPokemons, ...filteredResults])
+    } else {
+        const filteredResults = filteredPokemons.filter((pokemon) =>
+        !pokemon.types.map((type) => type.type.name).includes(e.target.name)
+      );
+      setfilteredPokemons([...filteredResults])
+    }
+  };
+
   return (
     <PokemonContext.Provider
       value={{
@@ -76,6 +124,16 @@ export const PokemonProvider = ({ children }) => {
         pokemons,
         allPokemons,
         getPokemonById,
+        onClickLoadMore,
+        //loader
+        loading,
+        setloading,
+        //btn filter
+        active,
+        setActive,
+        // filter container checkbox
+        handleCheckbox,
+        filteredPokemons,
       }}
     >
       {children}

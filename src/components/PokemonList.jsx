@@ -1,16 +1,31 @@
 import React, { useContext } from "react";
 import { PokemonContext } from "../contex/pokemonContext";
 import CardPokemon from "./CardPokemon";
+import Loader from "./Loader";
 
 function PokemonList() {
-  const { pokemons } = useContext(PokemonContext);
+  const { pokemons, loading, filteredPokemons } = useContext(PokemonContext);
   return (
     <>
-      <div className="card-list-pokemon container">
-        {pokemons.map((pokemon) => (
-          <CardPokemon pokemon={pokemon} key={pokemon.id} />
-        ))}
-      </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className="card-list-pokemon container">
+          {filteredPokemons.length ? (
+            <>
+              {filteredPokemons.map((pokemon) => (
+                <CardPokemon pokemon={pokemon} key={pokemon.id} />
+              ))}
+            </>
+          ) : (
+            <>
+              {pokemons.map((pokemon) => (
+                <CardPokemon pokemon={pokemon} key={pokemon.id} />
+              ))}
+            </>
+          )}
+        </div>
+      )}
     </>
   );
 }
