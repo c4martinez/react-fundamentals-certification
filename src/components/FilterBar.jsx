@@ -2,10 +2,11 @@ import React, { useContext } from "react";
 import { PokemonContext } from "../contex/pokemonContext";
 
 export const FilterBar = () => {
-  const { active, handleCheckbox } = useContext(PokemonContext);
+  const { active, setActive, handleCheckbox } = useContext(PokemonContext);
   return (
     <div className={`container-filters ${active ? "active" : ""}`}>
       <div className="filter-by-type">
+        <button className="btn-load-more" onClick={() => setActive(!active)}>Cerrar</button>
         <span>Tipo</span>
         <div className="group-type">
           <input
