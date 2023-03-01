@@ -266,6 +266,7 @@ header form {
 	height: 100%;
 	padding-top: 140px;
 	transition: all 0.3s linear;
+    overflow: auto;
 }
 
 .container-filters.active {

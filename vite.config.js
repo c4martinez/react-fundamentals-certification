@@ -6,10 +6,15 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3030,
+    host: 'localhost',
   },
   preview: {
     port: 4720,
   },
+  optimization: {
+    removeAvailableModules: true,
+    removeEmptyChunks: true,
+    },
   build: {
     incremental: true,
     babel: {
