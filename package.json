@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@uiball/loaders": "^1.2.6",
-    "axios": "^1.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "6"
