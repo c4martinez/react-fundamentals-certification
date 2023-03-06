@@ -417,6 +417,9 @@ header form {
 .container-filter {
 	margin: 0 10%;
 }
+.container-filters {
+	width: 8rem;
+}
 .cardImg img {
 	width: 50%;
 	height: 50%;
@@ -455,5 +458,8 @@ header form {
 	}
 	.container-btn-load-more {
 		display: flex;
+	}
+	.container-filters {
+		width: 9rem;
 	}
   }

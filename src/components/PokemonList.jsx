@@ -13,7 +13,7 @@ function PokemonList() {
         <div className="card-list-pokemon container">
           {filteredPokemons.length ? (
             <>
-              {filteredPokemons.map((pokemon) => (
+              {filteredPokemons.map(pokemon => (
                 <CardPokemon pokemon={pokemon} key={pokemon.id} />
               ))}
             </>
