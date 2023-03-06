@@ -1,0 +1,52 @@
+.card-list-pokemon {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+}
+
+.cardPokemon {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.cardImg {
+	background-color: #f2f2f2;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+	height: 250px;
+}
+
+.cardImg img {
+	width: 100%;
+	height: 100%;
+}
+
+.cardInfo {
+	padding: 15px;
+}
+
+.cardInfo h3 {
+	color: #333;
+}
+
+.pokemonId {
+	display: block;
+	color: #888;
+	margin-bottom: 15px;
+}
+
+.cardTypes {
+	display: flex;
+	gap: 10px;
+	margin-top: 10px;
+}
+
+.cardTypes span {
+	font-size: 12px;
+	padding: 5px 20px;
+	border-radius: 5px;
+	color: #fff;
+}
