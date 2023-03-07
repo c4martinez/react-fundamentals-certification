@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
-import CardPokemon from "../components/cardPokemon/CardPokemon";
+import { CardPokemon } from "../components";
 import { PokemonContext } from "../contex/pokemonContext";
 
 export const SearchPage = () => {
@@ -8,7 +8,7 @@ export const SearchPage = () => {
 
   const { allPokemons } = useContext(PokemonContext);
 
-  const filteredPokemons = allPokemons.filter((pokemon) =>
+  const filteredPokemons = allPokemons.filter(pokemon =>
     pokemon.name.includes(location.state.toLowerCase())
   );
 

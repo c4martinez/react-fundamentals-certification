@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { PokemonContext } from "../contex/pokemonContext";
-import CardPokemon from "./cardPokemon/CardPokemon";
+import { CardPokemon } from "./cardPokemon/CardPokemon";
 import Loader from "./Loader";
 
 function PokemonList() {
@@ -19,7 +19,7 @@ function PokemonList() {
             </>
           ) : (
             <>
-              {pokemons.map((pokemon) => (
+              {pokemons.map(pokemon => (
                 <CardPokemon pokemon={pokemon} key={pokemon.id} />
               ))}
             </>
