@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "../components/Loader";
-import { PokemonContext } from "../contex/pokemonContext";
+import { PokemonContext } from "../contex/PokemonContext";
 import { primerMayuscula } from "../helper/helper";
 
 export const PokemonPage = () => {

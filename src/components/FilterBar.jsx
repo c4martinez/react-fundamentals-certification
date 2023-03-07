@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { PokemonContext } from "../contex/pokemonContext";
+import { PokemonContext } from "../contex/PokemonContext";
 
 export const FilterBar = () => {
   const { active, setActive, handleCheckbox } = useContext(PokemonContext);

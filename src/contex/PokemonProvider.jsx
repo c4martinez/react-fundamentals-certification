@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PokemonContext } from "./pokemonContext";
+import { PokemonContext } from "./PokemonContext";
 import { BASE_URL } from "../config";
 
 import { useForm } from "../hooks/useForm";

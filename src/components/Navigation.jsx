@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import { PokemonContext } from "../contex/pokemonContext";
+import { PokemonContext } from "../contex/PokemonContext";
 
 export const Navigation = () => {
   const { onInputChange, valueSearch, onResetForm } =
