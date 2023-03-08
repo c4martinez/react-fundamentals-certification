@@ -417,8 +417,22 @@ header form {
 .container-filter {
 	margin: 0 10%;
 }
+.logo {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+.logo img {
+	width: 230px;
+}
+.btn-search {
+	display: none;
+}
 .container-filters {
 	width: 8rem;
+}
+.container-filter {
+	margin: 0;
 }
 .cardImg img {
 	width: 50%;
@@ -450,6 +464,26 @@ header form {
 		margin: auto;
 		padding: 0.8rem;
 	}
+	.logo {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 1rem;
+	}
+	.logo img {
+		width: 250px;
+	}
+	header form {
+		display: flex;
+		justify-content: center;
+	}
+	.card-list-pokemon {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+	.btn-search {
+		display: none;
+	}
 	.number-pokemon {
 		display: none;
 	}
@@ -461,5 +495,8 @@ header form {
 	}
 	.container-filters {
 		width: 10rem;
+	}
+	.container-filter {
+		margin: 0;
 	}
   }
